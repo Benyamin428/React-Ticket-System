@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/css/main.22df0f77.css",
-    "main.js": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/js/main.32da90b5.js",
-    "static/js/787.3ea2ebe0.chunk.js": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/js/787.3ea2ebe0.chunk.js",
-    "index.html": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/index.html",
-    "main.22df0f77.css.map": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/css/main.22df0f77.css.map",
-    "main.32da90b5.js.map": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/js/main.32da90b5.js.map",
-    "787.3ea2ebe0.chunk.js.map": "/Benyamin428/React-Ticket-System/tree/main/ticket-system/static/js/787.3ea2ebe0.chunk.js.map"
+    "main.css": "/Benyamin428/React-Ticket-System/static/css/main.22df0f77.css",
+    "main.js": "/Benyamin428/React-Ticket-System/static/js/main.b60d684c.js",
+    "static/js/787.3ea2ebe0.chunk.js": "/Benyamin428/React-Ticket-System/static/js/787.3ea2ebe0.chunk.js",
+    "index.html": "/Benyamin428/React-Ticket-System/index.html",
+    "main.22df0f77.css.map": "/Benyamin428/React-Ticket-System/static/css/main.22df0f77.css.map",
+    "main.b60d684c.js.map": "/Benyamin428/React-Ticket-System/static/js/main.b60d684c.js.map",
+    "787.3ea2ebe0.chunk.js.map": "/Benyamin428/React-Ticket-System/static/js/787.3ea2ebe0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.22df0f77.css",
-    "static/js/main.32da90b5.js"
+    "static/js/main.b60d684c.js"
   ]
 }
