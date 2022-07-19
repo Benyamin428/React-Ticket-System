@@ -5,7 +5,7 @@ const Employee = ({teamArr}) => {
 
     const [ticket, setTicket] = useState([]);
 
-    if (ticket.length != teamArr.length) {
+    if (ticket.length !== teamArr.length) {
         teamArr.forEach(teamMember => {
             ticket.push({[teamMember.id]: 0}); 
         })
@@ -17,6 +17,14 @@ const Employee = ({teamArr}) => {
         setTicket(newTicketArr);
     }
 
+    const handleMinusButtonClick = (teamMember, index) => {
+        let newTicketArr = [...ticket];
+        if (newTicketArr[index][teamMember.id] > 0) {
+            newTicketArr[index][teamMember.id] -= 1;
+            setTicket(newTicketArr);
+        }
+    }
+
     const listOfEmployees = teamArr.map((teamMember, index) => {
         return (
             <div className="team__employee-card" key={teamMember.id}>
@@ -24,6 +32,7 @@ const Employee = ({teamArr}) => {
                 <p>Role: {teamMember.role}</p>  
                 <p>{ticket[index][teamMember.id]}</p>
                 <button onClick={() => handlePlusButtonClick(teamMember, index)}>+</button>
+                <button onClick={() => handleMinusButtonClick(teamMember, index)}>-</button>
             </div>
         );
     })
