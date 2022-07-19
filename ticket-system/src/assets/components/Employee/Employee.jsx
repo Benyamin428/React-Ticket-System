@@ -39,7 +39,12 @@ const Employee = ({teamArr}) => {
 
     return (
         <>
-            {listOfEmployees}
+            <div className="team__filter">
+                <p>Filter</p>
+            </div>
+            <div className="team__employee">
+                {listOfEmployees}
+            </div>
         </>
     );
 }

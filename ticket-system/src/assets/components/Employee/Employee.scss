@@ -1,3 +1,17 @@
-.team__employee-card {
-    background: green;
+.team__employee {
+    .team__employee-card {
+        background: green;
+    }
+}
+
+.team__filter {
+    background: orange;
+}   
+
+@media screen and (min-width: 768px) {
+    .team__employee {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
 }
