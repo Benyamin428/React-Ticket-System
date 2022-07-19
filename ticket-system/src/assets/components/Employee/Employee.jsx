@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Employee.scss";
 
 const Employee = ({teamArr}) => {
 
+    const [team, setTeam] = useState(teamArr);
+
     const [ticket, setTicket] = useState([]);
+    const [roleFilter, setRoleFilter] = useState('');
 
     if (ticket.length !== teamArr.length) {
         teamArr.forEach(teamMember => {
@@ -25,7 +28,7 @@ const Employee = ({teamArr}) => {
         }
     }
 
-    const listOfEmployees = teamArr.map((teamMember, index) => {
+    const listOfEmployees = team.map((teamMember, index) => {
         return (
             <div className="team__employee-card" key={teamMember.id}>
                 <p>Name: {teamMember.name}</p>
@@ -37,10 +40,33 @@ const Employee = ({teamArr}) => {
         );
     })
 
+    const filterRole = (event) => {
+        const filteredTeam = teamArr.filter(teamMember => {
+            if (teamMember.role.toLowerCase().includes(event.target.value.toLocaleLowerCase())) {
+                return teamMember;
+            }
+        })
+        setTeam(filteredTeam);
+    }
+
+    const filterName = (event) => {
+        const filteredTeam = teamArr.filter(teamMember => {
+            if (teamMember.name.toLowerCase().includes(event.target.value.toLocaleLowerCase())) {
+                return teamMember;
+            }
+        })
+        setTeam(filteredTeam);
+    }
+
     return (
         <>
             <div className="team__filter">
                 <p>Filter</p>
+                <label htmlFor="role">By Role</label><br />
+                <input type="text" id="role" onChange={filterRole}/>
+                <br />
+                <label htmlFor="name">By Employee</label><br />
+                <input type="text" id="name" onChange={filterName}/>
             </div>
             <div className="team__employee">
                 {listOfEmployees}
