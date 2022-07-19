@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "./Employee.scss";
 
 const Employee = ({teamArr}) => {
@@ -6,7 +6,6 @@ const Employee = ({teamArr}) => {
     const [team, setTeam] = useState(teamArr);
 
     const [ticket, setTicket] = useState([]);
-    const [roleFilter, setRoleFilter] = useState('');
 
     if (ticket.length !== teamArr.length) {
         teamArr.forEach(teamMember => {
@@ -31,11 +30,14 @@ const Employee = ({teamArr}) => {
     const listOfEmployees = team.map((teamMember, index) => {
         return (
             <div className="team__employee-card" key={teamMember.id}>
-                <p>Name: {teamMember.name}</p>
-                <p>Role: {teamMember.role}</p>  
-                <p>{ticket[index][teamMember.id]}</p>
-                <button onClick={() => handlePlusButtonClick(teamMember, index)}>+</button>
-                <button onClick={() => handleMinusButtonClick(teamMember, index)}>-</button>
+                <p className="team__employee-card-text">Name:</p>
+                <p className="team__employee-card-text team__employee-card-text--special">{teamMember.name}</p>
+                <p className="team__employee-card-text">Role:</p>
+                <p className="team__employee-card-text team__employee-card-text--special">{teamMember.role}</p>  
+                <p className="team__employee-card-text">Ticket:</p>
+                <p className="team__employee-card-text team__employee-card-text--special">{ticket[index][teamMember.id]}</p>
+                <button className="team__employee-card-button" onClick={() => handlePlusButtonClick(teamMember, index)}>+</button>
+                <button className="team__employee-card-button" onClick={() => handleMinusButtonClick(teamMember, index)}>-</button>
             </div>
         );
     })
@@ -61,11 +63,11 @@ const Employee = ({teamArr}) => {
     return (
         <>
             <div className="team__filter">
-                <p>Filter</p>
-                <label htmlFor="role">By Role</label><br />
+                <h2 className="team__filter-title">Filter</h2>
+                <label className="team__filter-label" htmlFor="role">By Role</label><br />
                 <input type="text" id="role" onChange={filterRole}/>
                 <br />
-                <label htmlFor="name">By Employee</label><br />
+                <label className="team__filter-label" htmlFor="name">By Employee</label><br />
                 <input type="text" id="name" onChange={filterName}/>
             </div>
             <div className="team__employee">

@@ -1,0 +1,10 @@
+@use "./../../styles/typography" as *;
+
+h1 {
+    text-align: center;
+    background: #c02f2f;
+    padding: 2rem;
+    color: #fff;
+    font-family: $title-font;
+    font-size: 3rem;
+}
