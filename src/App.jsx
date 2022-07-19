@@ -9,28 +9,27 @@ const App = () => {
 
     const [teamArr, setTeamArr] = useState(team);
 
-    const filterRole = (event) => {
-        const filteredTeam = teamArr.filter(teamMember => {
-            if (teamMember.role.toLowerCase().includes(event.target.value.toLocaleLowerCase())) {
-                return teamMember;
-            }
-        })
-        setTeamArr(filteredTeam);
-        console.log(teamArr);
-    }
-
-    const filterName = (event) => {
-        const filteredTeam = teamArr.filter(teamMember => {
-            if (teamMember.name.toLowerCase().includes(event.target.value.toLocaleLowerCase())) {
-                return teamMember;
-            }
-        })
-        setTeamArr(filteredTeam);
-    }
-
     const employees = teamArr.map(employee => {
         return <Employee key={employee.id} name={employee.name} role={employee.role} />
     })
+
+    const filterRole = (event) => {
+        const filteredTeam = team.filter(teamMember => {
+            if (teamMember.role.toLowerCase().includes(event.target.value.toLowerCase())) {
+                return teamMember;
+            }
+        })
+        setTeamArr(filteredTeam);
+    }
+
+    const filterName = (event) => {
+        const filteredTeam = team.filter(teamMember => {
+            if (teamMember.name.toLowerCase().includes(event.target.value.toLowerCase())) {
+                return teamMember;
+            }
+        })
+        setTeamArr(filteredTeam);
+    }
 
     return ( 
         <>
